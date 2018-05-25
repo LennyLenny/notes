@@ -1,0 +1,37 @@
+ctrl +/		注释
+ctrl +y/	重复
+ctrl+滚轮	放大缩小
+ctrl+n		新建一个文档
+ctrl+enter	光标自动到下一行
+ctrl+enter+shift	光标自动到上一行
+ctrl+v+shift	粘贴并保持缩进
+
+写html：5 + tab键快速生成文档结构
+
+ctrl+shift+D 快速复制这一行内容
+ctrl+shift+P 命令面板
+
+ctrl+{ 往左边进行缩进
+ctrl+} 往右边进行缩进
+
+home键光标移到行首
+end键光标移到行尾
+
+ctrl+h 多条查找替换
+Ctrl+p goto 
+ctrl+d  选择多处同名文件（光标选出来了再按）按多次选中多次，按ctrl+k Ctrl+d跳过当前
+ctrl shift L 选中多项
+alt+F3 选中该单词的多项
+shift + 鼠标右键拖动 产生多行游标
+切换当前语言模式：Ctrl shift P 输入即可		命令模式
+
+ul>.$*10 按ctrl+E 生成10个ul标签
+
+ctrl alt n 快速创建文件，路径可写
+
+ctrl+;可以查找标签或者元素
+
+在函数上方写/**按回车可以快速添加函数注释
+
+
+ctrl+a 然后ctrl+alt可以设置缩进

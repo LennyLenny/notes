@@ -1,0 +1,16 @@
+数据绑定可以{{}},也可以ng-bind
+使用ng-bind不会产生刷新页面时出现原来的文字
+一般在index.html里用ng-bind，其他用{{}}
+
+model就是data
+scope对象是html view和controller的绑定部分
+
+双向绑定步骤：
+1 写app.js文件，定义module和controller
+2 给html属性加 ng-app	表示这个网页是一个angular application  绑定到module
+3 给要绑定的元素加 ap-model 
+
+
+ng-include既可以是属性 也可以是标签
+<ng-include src="'header.html'"> </ng-include>
+<header ng-include="'header.html'"></header>

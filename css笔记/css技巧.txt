@@ -1,0 +1,43 @@
+
+对父容器设置padding在（除了chrome浏览器外），下方的留白效果出不来
+
+普通元素的百分比margin都是相对于容器的宽度计算的
+
+改变文字方向writing-mode
+
+父子元素出现margin重叠，在子元素前面插入一个空格即可
+
+margin重叠规则：
+正正取大值
+正负值相加
+负负取绝对值最大
+
+给div设置属性，如果
+position:fixed;
+	
+bottom:0;
+	
+right:0;
+鼠标向浏览器下方移动红色框框不会改变（垃圾小广告的原理）
+
+position:absoulte;
+	
+bottom:0;
+	
+right:0;
+鼠标向下滚动就会滚掉
+
+relative和absolute配合使用可以使标签脱离浏览器为参照物
+http://www.imooc.com/code/3585	（12-9）
+
+当你设置一个元素为 box-sizing: border-box; 时，此元素的内边距和边框不再会增加它的宽度。
+
+p{font-size:12px;text-indent:2em;}
+上面代码就是可以实现段落首行缩进 24px（也就是两个字体大小的距离）。
+
+
+display:none 通常被 JavaScript 用来在不删除元素的情况下隐藏或显示元素。
+
+
+当两个容器嵌套时，如果外层容器和内层容器之间没有别的元素，浏览器会把内层元素的margin-top作用与父元素。
+可以给父元素加一个padding值来解决，内层设置的margin就可以了

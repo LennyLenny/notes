@@ -1,0 +1,5 @@
+
+
+this.setAlwaysOnTop(true);//使窗格一直漂浮在上方
+Robot函数 ：控制鼠标，控制键盘，屏幕截图。在java.awt函数里
+ToolKit函数：帮助类，可以帮助你获取电脑的一些信息，屏幕宽高，分辨率

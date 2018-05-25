@@ -1,0 +1,95 @@
+mysql语句遇到;结束
+mysql库名不能修改
+数据是以文件的形式存放在硬盘中
+null无法比较  只能用 ..is比较 [固]
+
+
+
+常用语句
+查找库	show databases;
+选中库	use 库名;
+创建库	create database 库名;
+删除库	drop   database 库名;
+ 
+
+
+ 表
+给表重命名  rename table 旧名 to 新名;
+数据表里的信息，最小为行
+查看表结构(描述)	desc 表名
+
+
+
+新增记录  insert into 表名 values(,,);
+删除记录  delete from 表名 where ...(id=..);
+修改记录  update 表名 set 要改的值 where ...(id..);
+查看记录  select * (id,title) from 表名 (where..);
+在表中添加列 alter table 表名 add 列名 数据类型
+
+
+
+列的类型：整形 字符型 日期/时间型   不同类型的列所占的空间不同
+选列的原则：够用就行 不浪费
+建表的过程其实就是申明列的过程
+
+
+
+整形
+tinyint  smallint  mediumint int bigint
+默认为有符号数(补码表示)
+
+
+可选属性 tinyint(M) unsigned zerofill
+zerofill表示零填充，前方位数不够时用0填充，具体填几位参考M值，如果某列是zerofill,默认为unsigned
+列可以申明默认值 not null default 0 (推荐)
+
+
+
+浮点型和定点型
+定点型比浮点型更精确
+Float(M,D) M表示总位数，D表示小数点后的位数
+float(6,2)表示 [-9999.99，9999.99]
+如果加了unsigned变成[0,9999.99]
+
+
+字符型
+Char(M)（定长）M代表宽度，即可容纳的字符数。如果小于M字符，实际占M个字符  0<M<255
+Varchar(M)（变长）M代表宽度，即可容纳的字符数。如果小于M个字符，假设存了n个字符，实际存占n多1到2个字节    0<M<65535
+Char不够长度用空格补齐，取的时候把尾部空格去掉，所以尾部输入空格会丢失，但是变长不会
+char速度比varchar快
+
+比较大的内容用text类型存，text不能设置默认值
+
+字符型里有
+枚举型enum('男','女') 多选一
+集合类型set(,,,)多选多
+但是这两个类型不符合数据库的关系型理念
+
+
+时间日期型
+year类型 1字节 表示1901-2155之间的年份   0000（返回错误年份）
+date类型 格式1992-05-06	   (1000-01-01)-(9999-12-31)
+time类型 00:00:12 （-838 59:59）-（838 59:59）
+datetime 1989-06-06 14:32:08
+
+在实际应用中多用int时间戳 方便计算
+<?php
+echo time();
+echo date(y-m-d,time());
+
+id 源数据
+auto_increment 实现值的自动增长
+
+集合语句
+select ... where id in <4,5>;
+                    between 2 and 10; (边界包含)
+                    >=300 and id <=500 or id>=700 and id<=900;
+		    !=4 or id!=5;
+		    id not in<4,5>;
+
+模糊查询
+关键字like
+% 匹配任意字符
+_ 匹配单个字符
+
+

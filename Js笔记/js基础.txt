@@ -1,0 +1,148 @@
+javascript基础
+
+
+js定义：基于对象和事件驱动的并且具有安全性能的解释型脚本语言
+解释型：不需要编译，浏览器直接执行，无需走后台
+基于对象：我们可以直接使用js已经创建的对象
+事件驱动：可以对以事件驱动的方式响应客户端的输入，无需经过服务器端
+安全性：不允许访问本地硬盘，不能将数据写到服务器上
+跨平台：浏览器支持js就可以正确执行，依赖于浏览器本身
+
+
+js与java区别：基本不相干，除了语法有点相似。
+
+js代码写在<script>标签中，既可以放在head标签，又可以放在body标签里
+
+Date里：获得年要加1900，获得月加1
+
+要引用其他的js文件，写在head标签中比较好
+<script language ="javascript" src.js后缀的文件路径>  <script>
+
+js每行结尾的分号可有可无，如果没有，js会自动将这行代码的结尾作为语句的结尾
+
+js换行：+"<br/>"
+
+变量是弱类型，定义的时候用var关键字
+
+被封装在{ }里的语句按照顺序执行
+
+0不能用作除数，如果用作除数，则返回Infinity
+
+“11”== 11  //true	！=只判断表面值	
+	===判断值和类型  ！==
+
+var a = "Hello" + "World"
+a+= "Hello Everyone"       /*相当等于a=a+"Hello Everyone"*/
+
+
+js输出语句换行： document.write(mystr+mychar+"<br>"+"lol");
+js输出语句空格：document.write(mystr+mychar+"&nbsp"+"lol");
+js消息对话框：var mymessage= confirm("您的性别？")         ;
+    if(mymessage==true)
+    {
+    	document.write("你是女士!");
+    }
+    else
+    {
+        document.write("你是男士!");
+    }
+
+
+
+js与用户交互prompt
+
+	var score = prompt("请输入您的分数",80);   //score变量，用来存储用户输入的成绩值,80是默认值，可修改，第一个参数不可修改              ;
+	if(score>=90)
+	{
+	   document.write("你很棒!");
+	}
+	else if(score>=75)
+    	{
+	   document.write("不错吆!");
+	}
+	else if(score>=60)
+    	{
+	   document.write("要加油!");
+    	}
+
+       else
+	{
+       document.write("要努力了!");
+
+js打开新窗口，window.open
+window.open('http://www.imooc.com','_blank','width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes')
+//例如:打开http://www.imooc.com网站，大小为300px * 200px，无菜单，无工具栏，无状态栏，有滚动条窗口
+  记住，网站要把http://加上
+
+Object获取的是元素的对象，document.getElementById获取的是元素
+
+innerHTML替换html元素内容  mychar.innerHTML="Hello World!" 
+mychar.style.display = "value" (value = "none" 表示隐藏元素，"block"表示显示元素)
+
+js变量.必须以字母、下划线或美元符号开头，后面可以跟字母、下划线、美元符号和数字
+
+操作符之间的优先级（高到低）:
+算术操作符 → 比较操作符 → 逻辑操作符 → "="赋值符号
+
+
+http://www.imooc.com/code/1482
+
+Math 对象是一个固有的对象，无需创建它，直接把 Math 作为对象使用就可以调用其所有属性和方法。这是它与Date,String对象的区别。
+
+
+String对象截取子串 substring()方法
+Array对象截取子段  slice(a,b)方法 
+这两个方法都是含头不含尾
+
+setIntervial()方法，每隔多少时间执行函数
+var attime;
+  function clock(){
+    var time=new Date();          
+    attime = time.getHours();
+    document.getElementById("clock").value = attime;
+  }
+  var int = setInterval(clock,2000);	//每隔2秒刷新一次
+
+window.location.href	获取当前url
+
+
+节点属性：
+一、nodeName 属性: 节点的名称，是只读的。
+
+1. 元素节点的 nodeName 与标签名相同
+2. 属性节点的 nodeName 是属性的名称
+3. 文本节点的 nodeName 永远是 #text
+4. 文档节点的 nodeName 永远是 #document
+
+二、nodeValue 属性：节点的值
+
+1. 元素节点的 nodeValue 是 undefined 或 null
+2. 文本节点的 nodeValue 是文本自身
+3. 属性节点的 nodeValue 是属性的值
+
+三、nodeType 属性: 节点的类型，是只读的。以下常用的几种结点类型:
+
+元素类型    节点类型
+  元素          1
+  属性          2
+  文本          3
+  注释          8
+  文档          9
+
+
+注意: 把删除的子节点赋值给 x，这个子节点不在DOM树中，但是还存在内存中，可通过 x 操作。
+如果要完全删除对象，给 x 赋 null 值
+
+浏览器可视区域大小：
+var w=document.documentElement.clientWidth || document.body.clientWidth;
+var h=document.documentElement.clientHeight || document.body.clientHeight;
+document.write("宽："+w+"<br>"+"高："+h);
+
+
+数组：
+splice(a,b,)
+表示在角标为a的地方拿掉b个元素，把要新增加的写道后面的参数里
+
+push()从尾巴新增
+pop()从头新增
+特定值索引：indexOf(num)，返回该值角标

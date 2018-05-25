@@ -1,0 +1,43 @@
+最常见作用：用于基本数据类型和字符串类型之间做转换
+基本数据类型转字符串：基本数据类型+""
+		      基本数据类型.toString（index）	String s = Integer.toString(34);
+字符串转基本数据类型：
+		     基本数据类型包装类.parse数据类型（“字符串”）   int i = Integer.parseInt("123");	//静态调用
+			Character 字符类型没有这个方法
+	
+	或者	    int a = new Integer("123");
+		    int num = a.intValue();			//对象调用方式，非静态
+
+
+Integer x = 4;	//自动装箱 4 = new Integer(4)	
+x = x+2;	//进行自动拆箱。变成了int类型（x.intValue()）。和2进行加法运算
+
+byte	Byte
+short	short
+int	Integer
+long	Long
+boolean	Boolean
+float	Float
+double	Double
+char	Character
+
+
+进制转换：
+十进制转其他进制：
+toBinaryString();	//API
+..
+..
+
+其他进制转十进制：
+Integer.parseInt("110",2)	将110转化成二进制
+
+
+
+
+Integer a = 127;
+Integer b = 127;	这时a==b为true
+
+
+Integer a = 128;
+Integer b= 128;	这时a==b为false
+因为没有超过了Integer的取值范围，就会开辟新空间，在内存中两者不同。没有超过，则b会指向a

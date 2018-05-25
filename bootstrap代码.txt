@@ -1,0 +1,9 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+加在</head>前面
+
+
+<script src=" http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js">
+</script>
+
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js">
+//加载</body>前面

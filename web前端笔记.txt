@@ -1,0 +1,43 @@
+网站是B/S软件	C/S正在向B/S过渡
+客户端：html CSS js jq div 
+服务器端：PHP .net java c c++ 数据库
+
+
+
+希望把某个元素移除你的视线：
+display：none	消失
+visiblility: hidden	隐藏
+width：0  height：0 	宽高设为0
+透明度
+left 或者 top 		将其移出去
+用跟背景一样的div将其盖住
+margin为负
+
+
+
+写一个js效果的步骤：
+先实现布局
+再实现原理
+了解js语法
+
+
+js中如何获取元素
+通过id名称
+document get element by id ' '
+document.getElementById('idname')
+
+事件：鼠标事件 onclick  onmouseover（移入） onmouseout onmousemove onmousedown onmousedown
+      键盘事件 
+      系统事件
+      表单事件
+      自定义事件
+
+如何添加事件：
+	元素.onmouseover
+
+
+
+如何让函数执行：
+1 直接调用：名称();
+2 事件调用:元素.事件 = 函数名 oDiv.onclick = abc 
+ 测试用 alret（）测试	初学者最好保持一种随时写随时测的习惯

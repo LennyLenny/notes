@@ -1,0 +1,114 @@
+let关键字不会进行变量提升
+
+直接继承自DisplayObject的类都属于非容器
+继承自DisplayObjetContainer的类都属于容器类
+DisplayObject类是所有显示对象的父类
+
+egret.Profiler.getInstance().run(); 
+打开性能面板
+1.draw：这里参数描述了当前画面渲染时候drawcall的次数
+2.cost：分别为 EnterFrame阶段的开销，引擎updateTranform开销，引擎draw的开销，html5中canvas的开销
+3.FPS：为振频
+
+
+
+
+
+class Graphics extends egret.DisplayObjectContainer{
+   public constructor(){
+       super();
+       this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);	//第二个参数表示第一个执行的函数为onAddToStage
+            
+   }
+
+   private onAddToStage(event:egret.Event){
+       //some codes here :)
+   }
+}
+
+http://developer.egret.com/cn/apidoc/
+http://developer.egret.com/cn/github/egret-docs/Engine2D/getStarted/helloWorld/index.html
+
+
+位图加载：
+图片放在resource文件夹下
+要在res.json文件进行配置	json最后一项不加逗号，其他都要加
+
+
+（图片、音频）等资源在运行时往往都存在服务器端，当用户打开游戏时，egret会把这些资源下载到计算机中，再转载到内存
+获取资源三种方式：
+getRes()	同步加载
+getResAsync()	异步加载
+getResByUrl	从网络获取	不推荐
+
+想实现部分拉伸图片 参考视频3 九宫格的实现
+
+填充纹理，用拉伸的方式 img.width *= 2; 
+	    用平铺的方式 img.fillMode = egret.BitmapFillMode.REPEAT;
+
+在egret中建立显示对象和渲染显示对象是两个过程
+建立显示对象后，对象会存于内存中。只有把对象放到显示列表后，显示对象才会参与渲染过程，如果想将某个显示对象从渲染过程中删除，只需要将其移除列表即可
+this.addChild(spr);
+this.removeChild(spr);
+
+
+father.addChildAt(child,index)	表示在index的深度插入对象
+
+容器.swapChildren（显示对象，显示对象）表示两个深度值的对象交互位置
+
+容器.setChildIndex(显示对象，新的深度值)
+
+
+获取子对象可以用：深度值（推荐）或者name
+
+在uiStage里添加元素 用addElement(对象);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+String类是final的，不可能有子类，操作字符串功能，不能被复写
+String s ="abc"		s是一个类类型变量，指向abc这个对象
+字符串一旦初始化不能被改变	String s = abc;
+				   s = ak;		打印结果为ak，不是abc变了，是s转而指向了ak对象
+String类复写了Object类中的equal（）方法，定义自己独特内容，用于判断字符串是否相同
+
+String s = "abc";		两句话有什么区别
+String s1 = new String("abc");	s在内存中有一个对象，s1有两个（new，“abc”）	
+
+
+字符串方法：
+
+获取字符串长度 s.length();	注意数组中有个length属性，返回值是数组长度
+
+根据位置获取字符串上某个字符
+char charAt(int index)			//超过长度会发生角标越界
+
+根据字符获取在字符串中的位置
+int indexOf（int ch）			//从头开始索引		找不着返回-1
+int indexOf（int ch，int fromIndex）	//从指定位置开始索引
+
+
+
+	判断
+判断字符串是否以某一字符开头	boolean startsWith(str)		
+判断字符串是否以某一字符结尾	boolean endsWith（str）	
+判断字符串是否为空		boolean isEmpty（str）
+字符串中是否包含某一个子串	boolean contains（str）	
+判断内容是否相同并忽略大小写	boolean equalsIgnoreCase(str)
+
+
+	转换
+将字符数组转成字符串 构造函数 		static String（char[]）       //char[] arr = {'a','b','c','d'};String s = new String(arr);
+将字符数组中的一部分转换成字符串	static String(char[],offset,count)
+将基本数据类型转成字符串		static String valueOf(para);	//String.valueOf(3);	和3+“”效果一致
+将字节数组转成字符串			static String（byte[]）
+将字符串转成字符数组（重要）：toCharArray()	//返回值类型为char[]
+将字符串转成字节数组		getBytes（）	//返回值类型为byte[]
+
+
+
+
+	替换
+将字符串某个字符替换成新的字符		replace（‘old char’，‘new char’）		//也可以替换多个“ ”
+
+
+
+	切割
+将某一字符串按照某一字符切割开来		 split(regex);		//split(",") 返回值类型为 String[]
+
+	子串
+获取字符串中的一部分				substring(2)	//表示获取从角标为2开始到最后一位的子串
+						substring（2,4）//表示从角标为2到3，注意是[ )
+
+	转换
+将字符串转成大写或小写				toUpperCase();		toLowerCase();
+将字符串两端的多个空格去除			trim();
+对两个字符串进行自然顺序的比较			compareTo(string)	//返回值为int 返回为第一个不同字符的askii差
+
+
+
+
+
+StringBuffer
+
+StringBuffer是一个容器，当数据类型个数不确定时用
+长度是可变的
+可以直接操作多个数据类型
+最后都能变成字符串
+
+StringBuffer返回的对象都能直接再调用自己的方法，成为方法调用链 sb.append().append().insert();
+1.存储 	append(para)添加基本数据类型	返回值类型StringBuffer
+	insert(index,数据)在任意位置插入任意数据
+
+
+
+2.删除    delete（start，end）包含投不包含尾
+	  清空缓冲区 sb = new StringBuffer();（占内存更多） 或者 sb.delete(0,length())	
+	  deleteCharAt(index)删除某一位置的char
+
+3.获取
+	 char charAt(int index)
+	 int indexOf(String str)
+	 int lastIndexOf(String str)
+	 itn length()
+	 String substring(index start,index end)	注意返回值为String
+4.修改
+
+	replace（index start,index end,str）	str为要被修改的字符串
+	setCharAt（int index,chat ch）	替换某一角标上的字符，注意返回值类型为空	
+
+5.反转
+	reverse（）
+6.
+	void getChars(int srcBegin,int srcEnd, char[] dst,int dstBegin)
+	将缓冲区中指定数据存到指定字符数组中，dst为数组名，dstBegin为存入数组中的角标位置
+
+
+
+
+
+多线程用StringBuffer，单线程用StringBuilder，开发建议使用StringBuilder
+
+
+

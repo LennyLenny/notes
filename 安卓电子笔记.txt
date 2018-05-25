@@ -1,0 +1,40 @@
+将文件添加到sd卡里：window  showview other android fileExplorer
+
+src文件夹：用于存放java的源文件
+
+gen文件夹：存放开发工具自动生成的文件
+	其中R.java 文件用于登记各种资源的id
+
+应用中的文字尺寸，颜色，存放在res-->values文件夹中
+
+在asset中存放文件，不会在R.java里生成对应的id，若要访问该文件夹里面的资源，必须指定文件的目录来访问
+
+res里的AndroidMenifest叫做清单文件，里面显示了该应用所提供的功能，四大组件在该文件里面配置，里面的package名字是应用的唯一标识。在该文件<application\> 里可以更换应用的icon
+Activity这种类型组件，一定要放在当前应用的包或子包里面。
+清单文件是软件安装的时候被操作系统读取的
+
+
+window preferences Android Build /Default debug keystore 可以查看应用的秘钥文件
+
+安卓中显示的单位，如果是文字，显示dp，非文字显示sp。
+
+
+
+@android: ... 表示访问的是系统里的R文件
+
+软件运行过程中出错查看的位置：window-->show view-->other->logcat
+
+如何部署应用到手机上：在pc上安装手机驱动，usb连接
+
+window-->show view-->other->device 视图可以查看手机是否连接
+
+在开发环境下，把应用部署到真实手机上，runas android app..
+
+对项目进行单元测试：
+	引入单元测试的代码：<users-library android:name="android.test.runner"/>（放在清单文件application目录下）
+	配置单元测试框架的启动装置：<instrumentation android:name="android.test.instrumentationTestRunner"
+				     android:targetPackage=" "android:label="Test For My App/">
+
+
+.trip() 去除左右空格或者指定字符串
+indexof() 找特定字符出现的次数及位置

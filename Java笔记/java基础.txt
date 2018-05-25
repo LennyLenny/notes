@@ -1,0 +1,62 @@
+八种数据类型除boolean都可以相互转换
+小容量向大容量转换是强制类型转换（byte<short<int<long<float<double）
+byte short char 做混合运算时，各自都先转化成int再做计算
+大容量向小容量转换是强制类型转换，要加强制转换符，编译虽然通过，但运行时可能损失精度
+如果整数没有超出byte short char 的取值范围，可以直接将这个整数赋值给byte short char
+多种数据类型做混合运算，先转换成容量大的那种再做运算
+
+
+static只能修饰成员（成员变量，成员函数），不能修饰局部，静态修饰的内容被对象所共享。
+当成员被静态修饰后，可以被对象调用，也可以被类调用。格式：类名.静态成员
+class Person
+{
+	String name;		//成员变量 实例变量
+	Static String country = "CN";		//静态的成员变量 类变量
+	
+	public void show(){
+
+			System.out.println(name+" "+country);
+
+
+			}
+	
+}
+
+
+class StaticDemo{
+	
+	public static void main(String[] args){
+
+	System.out.println(Person.country);	//被类调用
+
+
+	Person p = new Person();		//常规调用
+	p.name = "zhangsan"
+	p.show();
+	System.out.println(p.country);	
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+java升级三因素：
+1.提高效率
+2.提高安全性
+3.简化书写
+
+
+
+在一个文件内，不允许有两个或以上的public类
+public类名必须和文件名一致
+类在java内存中只有一个对象，new若干次类对象，虚拟机就只会加载第一次，后面可以直接分配内存空间
+

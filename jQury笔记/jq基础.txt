@@ -1,0 +1,17 @@
+Query是一个JavaScript脚本库，不需要特别的安装
+只需要我们在页面 <head> 标签内中，通过 script 标签引入 jQuery 库即可。
+
+var $div = $('div') //jQuery对象
+var div = $div[0] //转化成DOM对象
+
+var $div = $('div') //jQuery对象
+var div = $div.get(0) //通过get方法，转化成DOM对象
+
+$( "#id" )等于getElementsById();
+$( ".class" )等于getElementsByClassName();
+$( "element" )等于getElementsByTagName();
+$( "*" )等于*{padding:0;margin:0;}
+
+:contains与:has都有查找的意思，
+但是contains查找包含“指定文本”的元素，
+has查找包含“指定元素”的元素
